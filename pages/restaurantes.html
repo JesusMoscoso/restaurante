@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tradición Tica | Restaurante</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/estilos/restaurante.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Bosque Nuboso</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Tours</a></li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="pages/restaurantes.html"
+                >Restaurante</a
+              >
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hospedajes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1>Tradición Tica</h1>
+        <p>
+          Donde la cocina costarricense se convierte en una experiencia
+          elegante, cultural y auténtica.
+        </p>
+        <a href="#menu-section" class="btn">Ver Menú</a>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="history" id="historia">
+      <div class="container">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <p>
+              Tradición Tica nace del amor por las recetas heredadas por
+              generaciones. Cada platillo refleja la identidad costarricense,
+              combinando tradición, cultura y elegancia en un solo lugar.
+            </p>
+            <p>
+              Más que un restaurante, somos un espacio donde la gastronomía
+              conecta con la historia.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="/imagenes/image.png" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu-section">
+      <div class="container">
+        <h2 class="section-title text-center">Nuestro Menú</h2>
+
+        <!-- BOTONES -->
+        <div class="menu-tabs text-center my-4">
+          <button
+            class="btn btn-outline-success me-2"
+            onclick="cambiarMenu('desayunos')"
+          >
+            Desayunos
+          </button>
+          <button
+            class="btn btn-outline-success me-2"
+            onclick="cambiarMenu('almuerzos')"
+          >
+            Almuerzos
+          </button>
+          <button
+            class="btn btn-outline-success me-2"
+            onclick="cambiarMenu('bebidas')"
+          >
+            Bebidas
+          </button>
+          <button
+            class="btn btn-outline-success"
+            onclick="cambiarMenu('postres')"
+          >
+            Postres
+          </button>
+        </div>
+
+        <!-- CONTENEDOR DINÁMICO -->
+        <div id="menuContainer" class="text-center mb-5"></div>
+      </div>
+    </section>
+
+    <!-- CONTENEDOR DEL MENÚ -->
+    <div id="menuContainer" class="container text-center mb-4"></div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Tradición Tica | Restaurante típico costarricense</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/restaurante.js"></script>
+  </body>
+</html>
