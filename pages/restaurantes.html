@@ -1,131 +1,190 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tradición Tica | Restaurante</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/estilos/restaurante.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Bosque Nuboso</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Tours</a></li>
-            <li class="nav-item">
-              <a class="nav-link active fw-bold" href="pages/restaurantes.html"
-                >Restaurante</a
-              >
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Hospedajes</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bosque Nuboso | Restaurantes</title>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="container">
-        <h1>Tradición Tica</h1>
-        <p>
-          Donde la cocina costarricense se convierte en una experiencia
-          elegante, cultural y auténtica.
-        </p>
-        <a href="#menu-section" class="btn">Ver Menú</a>
-      </div>
-    </section>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- HISTORY -->
-    <section class="history" id="historia">
-      <div class="container">
-        <h2 class="section-title">Nuestra Historia</h2>
-        <div class="row align-items-center g-5">
-          <div class="col-md-6">
-            <p>
-              Tradición Tica nace del amor por las recetas heredadas por
-              generaciones. Cada platillo refleja la identidad costarricense,
-              combinando tradición, cultura y elegancia en un solo lugar.
-            </p>
-            <p>
-              Más que un restaurante, somos un espacio donde la gastronomía
-              conecta con la historia.
-            </p>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="../estilos/restaurante.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="./tours.html">Tours</a></li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" href="restaurantes.html">Restaurantes</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Hospedajes</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container text-center">
+    <h1>Experiencia Gastronómica</h1>
+    <p>Descubrí los mejores sabores tradicionales y modernos en nuestros restaurantes.</p>
+  </div>
+</section>
+
+<!-- RESTAURANTES -->
+<section class="section-wrap py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Nuestros Restaurantes</h2>
+
+    <div id="restaurantesCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+              <div class="rest-card">
+                <div class="rest-img">
+                  <img src="../imagenes/image.png" class="w-100" alt="Vila Paraíso">
+                </div>
+                <div class="rest-body text-center">
+                  <h5 class="rest-title">Vila Paraíso</h5>
+                  <a href="menu.html?rest=vila" class="btn-premium">Ver menú</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="rest-card">
+                <div class="rest-img">
+                  <img src="../imagenes/image.png" class="w-100" alt="Centro Turístico Río La Paz">
+                </div>
+                <div class="rest-body text-center">
+                  <h5 class="rest-title">Centro Turístico Río La Paz</h5>
+                  <a href="menu.html?rest=riopaz" class="btn-premium">Ver menú</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="rest-card">
+                <div class="rest-img">
+                  <img src="../imagenes/image.png" class="w-100" alt="Cafetería Flory">
+                </div>
+                <div class="rest-body text-center">
+                  <h5 class="rest-title">Cafetería Flory</h5>
+                  <a href="menu.html?rest=flory" class="btn-premium">Ver menú</a>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="col-md-6">
-            <img src="/imagenes/image.png" class="img-fluid" />
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+          <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+              <div class="rest-card">
+                <div class="rest-img">
+                  <img src="../imagenes/image.png" class="w-100" alt="Delicias de Anita">
+                </div>
+                <div class="rest-body text-center">
+                  <h5 class="rest-title">Delicias de Anita</h5>
+                  <a href="menu.html?rest=deliciasAnita" class="btn-premium">Ver menú</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="rest-card">
+                <div class="rest-img">
+                  <img src="../imagenes/image.png" class="w-100" alt="Rancho Carrucha">
+                </div>
+                <div class="rest-body text-center">
+                  <h5 class="rest-title">Rancho Carrucha</h5>
+                  <a href="menu.html?rest=ranchoCarrucha" class="btn-premium">Ver menú</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="rest-card">
+                <div class="rest-img">
+                  <img src="../imagenes/image.png" class="w-100" alt="Pizza Loca">
+                </div>
+                <div class="rest-body text-center">
+                  <h5 class="rest-title">Pizza Loca</h5>
+                  <a href="menu.html?rest=pizzaLoca" class="btn-premium">Ver menú</a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+
       </div>
-    </section>
 
-    <section class="menu" id="menu-section">
-      <div class="container">
-        <h2 class="section-title text-center">Nuestro Menú</h2>
+      <!-- CONTROLES -->
+      <button class="carousel-control-prev" type="button"
+              data-bs-target="#restaurantesCarousel"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
 
-        <!-- BOTONES -->
-        <div class="menu-tabs text-center my-4">
-          <button
-            class="btn btn-outline-success me-2"
-            onclick="cambiarMenu('desayunos')"
-          >
-            Desayunos
-          </button>
-          <button
-            class="btn btn-outline-success me-2"
-            onclick="cambiarMenu('almuerzos')"
-          >
-            Almuerzos
-          </button>
-          <button
-            class="btn btn-outline-success me-2"
-            onclick="cambiarMenu('bebidas')"
-          >
-            Bebidas
-          </button>
-          <button
-            class="btn btn-outline-success"
-            onclick="cambiarMenu('postres')"
-          >
-            Postres
-          </button>
-        </div>
+      <button class="carousel-control-next" type="button"
+              data-bs-target="#restaurantesCarousel"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
 
-        <!-- CONTENEDOR DINÁMICO -->
-        <div id="menuContainer" class="text-center mb-5"></div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- CONTENEDOR DEL MENÚ -->
-    <div id="menuContainer" class="container text-center mb-4"></div>
+<!-- FOOTER -->
+<footer class="text-white py-4 text-center bg-dark">
+  <div class="mb-3">
+    <a href="https://facebook.com" target="_blank" class="text-white mx-2">
+      <i class="bi bi-facebook fs-4"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="text-white mx-2">
+      <i class="bi bi-instagram fs-4"></i>
+    </a>
+    <a href="https://wa.me/50600000000" target="_blank" class="text-white mx-2">
+      <i class="bi bi-whatsapp fs-4"></i>
+    </a>
+    <a href="https://tiktok.com" target="_blank" class="text-white mx-2">
+      <i class="bi bi-tiktok fs-4"></i>
+    </a>
+  </div>
+  <p class="mb-0">© 2025 Bosque Nuboso La Paz</p>
+</footer>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2026 Tradición Tica | Restaurante típico costarricense</p>
-    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/restaurante.js"></script>
-  </body>
+</body>
 </html>

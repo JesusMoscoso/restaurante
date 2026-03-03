@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bosque Nuboso | Menú</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+   <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="../estilos/menu.css">
+ 
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" href="restaurantes.html">Restaurantes</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Hospedajes</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="menu-header position-relative">
+    <a href="restaurantes.html" class="btn-back">← Volver</a>
+
+    <h1 id="rest-name"></h1>
+    <p class="menu-subtitle">MENÚ GASTRONÓMICO</p>
+
+    <div>
+      <button id="btn-comidas" onclick="showCategory('comidas')" class="tab-btn active">
+        Comidas
+      </button>
+      <button id="btn-bebidas" onclick="showCategory('bebidas')" class="tab-btn">
+        Bebidas
+      </button>
+    </div>
+  </div>
+
+  <!-- 🔥 ÚNICO CARRUSEL -->
+  <div class="container mb-5">
+    <div id="menuCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner" id="carousel-content"></div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const restaurantes = {
+      vila: {
+        nombre: "Vila Paraíso",
+        comidas: [
+          {
+            nombre: "Casado típico",
+            ingredientes: "Arroz, frijoles, carne, ensalada, plátano",
+            precio: "₡4.500",
+            img: "../imagenes/comidas/pinto.png"
+          },
+          {
+            nombre: "Arroz con pollo",
+            ingredientes: "Arroz, pollo, vegetales",
+            precio: "₡3.800",
+            img: "../imagenes/comidas/pinto.png"
+          }
+        ],
+        bebidas: [
+          {
+            nombre: "Café chorreado",
+            ingredientes: "Café artesanal",
+            precio: "₡1.200",
+            img: "../imagenes/image.png"
+          }
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const restID = params.get("rest");
+    const rest = restaurantes[restID];
+
+    if (!rest) {
+      document.body.innerHTML = "<h2 class='text-center mt-5'>Restaurante no encontrado</h2>";
+      throw new Error("Restaurante inválido");
+    }
+
+    document.getElementById("rest-name").innerText = rest.nombre;
+
+    function showCategory(cat) {
+      const carousel = document.getElementById("carousel-content");
+      carousel.innerHTML = "";
+
+      document.getElementById("btn-comidas").classList.remove("active");
+      document.getElementById("btn-bebidas").classList.remove("active");
+      document.getElementById("btn-" + cat).classList.add("active");
+
+      rest[cat].forEach((item, index) => {
+        const slide = document.createElement("div");
+        slide.className = "carousel-item " + (index === 0 ? "active" : "");
+
+        slide.innerHTML = `
+          <img src="${item.img}" class="d-block w-100" alt="${item.nombre}">
+          <div class="carousel-caption">
+            <h3>${item.nombre}</h3>
+            <p>${item.ingredientes}</p>
+            <div class="price">${item.precio}</div>
+          </div>
+        `;
+
+        carousel.appendChild(slide);
+      });
+    }
+
+    showCategory("comidas");
+  </script>
+
+</body>
+</html>

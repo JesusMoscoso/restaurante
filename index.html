@@ -26,7 +26,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Bosque Nuboso</a>
+        <a class="navbar-brand fw-bold" href="index.html">Bosque Nuboso</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,11 +37,9 @@
         </button>
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Tours</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/tours.html">Tours</a></li>
             <li class="nav-item">
-              <a class="nav-link active fw-bold" href="pages/restaurantes.html"
-                >Restaurante</a
-              >
+              <a class="nav-link" href="pages/restaurantes.html">Restaurante</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
@@ -61,19 +59,8 @@
         data-bs-ride="carousel"
         data-bs-interval="5000"
       >
-        <div class="carousel-inner">
-          <div
-            class="carousel-item active hero-slide"
-            style="background-image: url(&quot;imagenes/cascada.jpg&quot;)"
-          ></div>
-          <div
-            class="carousel-item hero-slide"
-            style="background-image: url(&quot;imagenes/posa.jpg&quot;)"
-          ></div>
-          <div
-            class="carousel-item hero-slide"
-            style="background-image: url(&quot;imagenes/posa2.jpg&quot;)"
-          ></div>
+        <div class="carousel-inner" id="carouselContent">
+          <!-- JS insertará las imágenes aquí -->
         </div>
       </div>
 
@@ -92,8 +79,27 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-white py-4 text-center">
-      <p class="mb-0" data-key="copyright">© 2025 Bosque Nuboso La Paz</p>
+    <footer class="text-white py-4 text-center bg-dark">
+      <div class="mb-3">
+        <a href="https://facebook.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-facebook fs-4"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-instagram fs-4"></i>
+        </a>
+        <a
+          href="https://wa.me/50600000000"
+          target="_blank"
+          class="text-white mx-2"
+        >
+          <i class="bi bi-whatsapp fs-4"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-tiktok fs-4"></i>
+        </a>
+      </div>
+
+      <p class="mb-0">© 2025 Bosque Nuboso La Paz</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
