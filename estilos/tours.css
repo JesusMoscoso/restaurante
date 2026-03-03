@@ -13,7 +13,10 @@
   box-sizing: border-box;
 }
 
-/* NAVBAR */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 .navbar {
   background: var(--verde);
   backdrop-filter: blur(12px);
@@ -30,7 +33,7 @@
 }
 /* HERO */
 .hero {
-  min-height: 65vh; /* antes 100vh */
+  min-height: 65vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     url("/imagenes/17.jpg") center/cover no-repeat;
@@ -124,22 +127,6 @@
   object-fit: cover;
 }
 
-.btn-whatsapp {
-  display: inline-block;
-  margin-top: 15px;
-  background: #0f766e;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 12px 25px;
-  border-radius: 50px;
-  text-align: center;
-  transition: background 0.3s;
-}
-
-.btn-whatsapp:hover {
-  background: #065f56;
-}
 
 .tour-card {
   background: white;
@@ -177,6 +164,8 @@
   border-radius: 50%;
   padding: 20px;
 }
+
+
 /* =========================
    RESPONSIVE MOBILE FIX
 ========================= */

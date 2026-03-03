@@ -19,14 +19,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="/estilos/index.css" />
+    <link rel="stylesheet" href="estilos/index.css" />
   </head>
 
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">Bosque Nuboso</a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -35,16 +36,23 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="pages/tours.html">Tours</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/restaurantes.html">Restaurante</a>
+              <a class="nav-link" href="pages/tours.html">Tours</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Hospedajes</a>
+              <a class="nav-link" href="pages/restaurantes.html">Restaurantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/miradores.html">Miradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/souvenirs.html">Souvenirs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/hospedajes.html">Hospedajes</a>
             </li>
           </ul>
         </div>
@@ -71,7 +79,7 @@
           <p class="hero-subtitle">Naturaleza viva en San Ramón, Costa Rica</p>
 
           <div class="hero-buttons">
-            <a class="btn btn-success btn-lg me-2">Explorar Tours</a>
+            <a class="btn btn-success btn-lg me-2" href="pages/tours.html">Explorar Tours</a>
             <a class="btn btn-outline-light btn-lg">Cómo llegar</a>
           </div>
         </div>

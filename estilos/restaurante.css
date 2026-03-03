@@ -8,14 +8,13 @@
 }
 
 * {
-  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background: var(--fondo);
-  color: var(--texto);
-  overflow-x: hidden;
 }
 
 .navbar {
@@ -32,12 +31,12 @@ body {
   font-size: 1.35rem;
   letter-spacing: 1px;
 }
-
+/* HERO */
 .hero {
-  min-height: 65vh; /* antes 100vh */
+  min-height: 65vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("/imagenes/image.png") center/cover no-repeat;
+    url("/imagenes/17.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,86 +64,129 @@ body {
   text-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
   animation: fadeUp 1.8s ease;
 }
-/* TITULOS */
-.section-title {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 90px;
-  position: relative;
-  letter-spacing: 1px;
+/* TOURS SECTION */
+.tours-section {
+  padding: 100px 8%;
 }
 
-.section-title::after {
-  content: "";
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--dorado), transparent);
-  display: block;
-  margin: 22px auto 0;
-}
-
-
-.section-wrap {
-  padding: 100px 0;
-  background: #f6f3ee;
-}
-
-/* CARD GRANDE */
-.rest-card {
+/* CONTENIDO IZQUIERDA */
+.tour-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
   background: #fff;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-  transition: all 0.4s ease;
-}
-
-.rest-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
-}
-
-/* IMAGEN GRANDE */
-.rest-img {
-  overflow: hidden;
-}
-
-.rest-img img {
-  height: 320px;  
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.rest-card:hover .rest-img img {
-  transform: scale(1.08);
-}
-
-/* CONTENIDO */
-.rest-body {
+  border-radius: 12px;
   padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 20px auto;
+  align-items: start;
 }
 
-.rest-title {
-  font-size: 1.4rem;
+.tour-title {
+  color: #0f766e;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.tour-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tour-details {
+  display: flex;
+  gap: 40px;
+}
+
+.detail-block h3 {
+  color: #0f766e;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.detail-block p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.tour-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-image img {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+.tour-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.tour-content {
+  flex: 1;
+}
+
+.tour-title {
   font-weight: 700;
   margin-bottom: 20px;
-  color: #2c2c2c;
 }
 
-/* BOTÓN PREMIUM */
-.btn-premium {
-  display: inline-block;
-  background: linear-gradient(135deg, #1f8a5b, #146c43);
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.tour-description {
+  margin-bottom: 20px;
 }
 
-.btn-premium:hover {
-  background: linear-gradient(135deg, #146c43, #0f5132);
-  transform: scale(1.05);
+.tour-image {
+  flex: 1;
+}
+
+.tour-image img {
+  height: 450px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+  .tour-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .tour-image {
+    width: 100%;
+  }
+
+  .tour-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .tour-details {
+    flex-direction: column;
+    gap: 15px;
+  }
 }

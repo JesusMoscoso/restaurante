@@ -93,3 +93,40 @@ body {
 footer {
   background-color: #000000;
 }
+
+/* ======================
+   FIX REAL PARA MOBILE
+====================== */
+@media (max-width: 768px) {
+  .hero-elegant {
+    height: 75vh; /* más pequeño */
+  }
+
+  .hero-slide {
+    height: 75vh;
+    animation: none; /* quitamos zoom en móvil */
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hero-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+}

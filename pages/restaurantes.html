@@ -1,190 +1,253 @@
+<!---->
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bosque Nuboso | Restaurantes</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bosque Nuboso | Tours</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <!-- estilos-->
+    <link rel="stylesheet" href="../estilos/tours.css" />
+  </head>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="../estilos/restaurante.css">
-</head>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="#">Tours</a>
+            </li>
 
-<body>
+            <li class="nav-item">
+              <a class="nav-link" href="restaurantes.html"> Restaurantes </a>
+            </li>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="./tours.html">Tours</a></li>
-        <li class="nav-item">
-          <a class="nav-link active fw-bold" href="restaurantes.html">Restaurantes</a>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Hospedajes</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container text-center">
-    <h1>Experiencia Gastronómica</h1>
-    <p>Descubrí los mejores sabores tradicionales y modernos en nuestros restaurantes.</p>
-  </div>
-</section>
-
-<!-- RESTAURANTES -->
-<section class="section-wrap py-5">
-  <div class="container">
-    <h2 class="section-title text-center mb-5">Nuestros Restaurantes</h2>
-
-    <div id="restaurantesCarousel" class="carousel slide" data-bs-ride="carousel">
-
-      <div class="carousel-inner">
-
-        <!-- SLIDE 1 -->
-        <div class="carousel-item active">
-          <div class="row g-4 justify-content-center">
-
-            <div class="col-md-4">
-              <div class="rest-card">
-                <div class="rest-img">
-                  <img src="../imagenes/image.png" class="w-100" alt="Vila Paraíso">
-                </div>
-                <div class="rest-body text-center">
-                  <h5 class="rest-title">Vila Paraíso</h5>
-                  <a href="menu.html?rest=vila" class="btn-premium">Ver menú</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="rest-card">
-                <div class="rest-img">
-                  <img src="../imagenes/image.png" class="w-100" alt="Centro Turístico Río La Paz">
-                </div>
-                <div class="rest-body text-center">
-                  <h5 class="rest-title">Centro Turístico Río La Paz</h5>
-                  <a href="menu.html?rest=riopaz" class="btn-premium">Ver menú</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="rest-card">
-                <div class="rest-img">
-                  <img src="../imagenes/image.png" class="w-100" alt="Cafetería Flory">
-                </div>
-                <div class="rest-body text-center">
-                  <h5 class="rest-title">Cafetería Flory</h5>
-                  <a href="menu.html?rest=flory" class="btn-premium">Ver menú</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
+            <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hospedajes</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <!-- SLIDE 2 -->
-        <div class="carousel-item">
-          <div class="row g-4 justify-content-center">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Restaurantes en Bosque Nuboso</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nisi ex
+          explicabo illo alias, quas exercitationem fugit non maiores quo
+          asperiores, incidunt sequi corrupti eaque deleniti eum expedita culpa
+          molestias.
+        </p>
+      </div>
+    </section>
 
-            <div class="col-md-4">
-              <div class="rest-card">
-                <div class="rest-img">
-                  <img src="../imagenes/image.png" class="w-100" alt="Delicias de Anita">
+    <!--Restaurantes-->
+    <section class="section-wrap py-5">
+      <div class="container">
+        <div
+          id="restaurantesCarousel"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- RESTAURANTE VILLA PARAISO 1 -->
+            <div class="carousel-item active">
+              <div class="tour-card d-flex align-items-center">
+                <div class="tour-content p-5">
+                  <h2 class="tour-title">Villa Paraiso</h2>
+                  <p class="tour-description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Itaque, facilis voluptate. Officiis maxime ab soluta
+                    reprehenderit deserunt aliquid delectus optio, quo facilis
+                    voluptatum quae ex, ad commodi. Facilis, sequi quibusdam.
+                  </p>
+
+                  <div class="tour-details">
+                    <div class="detail-block">
+                      <h4 class="detail-title">Horarios</h4>
+                      <div class="schedule">
+                        <h5>Lunes a Viernes</h5>
+                        <ul class="detail-list">
+                          <li>8:00 AM</li>
+                          <li>10:00 PM</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="detail-block">
+                      <h5>Sábado a Domingo</h5>
+                      <ul class="detail-list">
+                        <li>9:00 AM</li>
+                        <li>4:00 PM</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <a
+                      href="menu.html?rest=vila"
+                      class="btn btn-success rounded-pill px-4 mt-3"
+                    >
+                      Ver menú
+                    </a>
+                  </div>
                 </div>
-                <div class="rest-body text-center">
-                  <h5 class="rest-title">Delicias de Anita</h5>
-                  <a href="menu.html?rest=deliciasAnita" class="btn-premium">Ver menú</a>
+
+                <div class="tour-image">
+                  <img
+                    src="../imagenes/14.jpg"
+                    class="img-fluid rounded-end"
+                    alt="Tour Chocolate"
+                  />
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="rest-card">
-                <div class="rest-img">
-                  <img src="../imagenes/image.png" class="w-100" alt="Rancho Carrucha">
+            <!-- RESTAURANTE CENTRO TURISTICO RIO LA PAZ 2 -->
+            <div class="carousel-item">
+              <div class="tour-card d-flex align-items-center">
+                <div class="tour-content p-5">
+                  <h2 class="tour-title">Centro Turístico Río La Paz</h2>
+                  <p class="tour-description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Itaque, facilis voluptate. Officiis maxime ab soluta
+                    reprehenderit deserunt aliquid delectus optio, quo facilis
+                    voluptatum quae ex, ad commodi. Facilis, sequi quibusdam.
+                  </p>
+
+                  <div class="tour-details">
+                    <div class="detail-block">
+                      <h4 class="detail-title">Horarios</h4>
+                      <div class="schedule">
+                        <h5>Lunes a Viernes</h5>
+                        <ul class="detail-list">
+                          <li>8:00 AM</li>
+                          <li>10:00 PM</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="detail-block">
+                      <h5>Sábado a Domingo</h5>
+                      <ul class="detail-list">
+                        <li>9:00 AM</li>
+                        <li>4:00 PM</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <a
+                      href="menu.html?rest=vila"
+                      class="btn btn-success rounded-pill px-4 mt-3"
+                    >
+                      Ver menú
+                    </a>
+                  </div>
                 </div>
-                <div class="rest-body text-center">
-                  <h5 class="rest-title">Rancho Carrucha</h5>
-                  <a href="menu.html?rest=ranchoCarrucha" class="btn-premium">Ver menú</a>
+
+                <div class="tour-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c"
+                    class="img-fluid rounded-end"
+                    alt="Tour Chocolate"
+                  />
                 </div>
               </div>
             </div>
-
-            <div class="col-md-4">
-              <div class="rest-card">
-                <div class="rest-img">
-                  <img src="../imagenes/image.png" class="w-100" alt="Pizza Loca">
-                </div>
-                <div class="rest-body text-center">
-                  <h5 class="rest-title">Pizza Loca</h5>
-                  <a href="menu.html?rest=pizzaLoca" class="btn-premium">Ver menú</a>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
 
+          <!-- CONTROLES -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#restaurantesCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#restaurantes
+            Carousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <script>
+      let currentIndex = 0;
+
+      function moveSlide(direction) {
+        const slider = document.getElementById("slider");
+        const slides = document.querySelectorAll(".slide");
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = slides.length - 1;
+        if (currentIndex >= slides.length) currentIndex = 0;
+
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="text-white py-4 text-center bg-dark">
+      <div class="mb-3">
+        <a href="https://facebook.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-facebook fs-4"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-instagram fs-4"></i>
+        </a>
+        <a
+          href="https://wa.me/50600000000"
+          target="_blank"
+          class="text-white mx-2"
+        >
+          <i class="bi bi-whatsapp fs-4"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-tiktok fs-4"></i>
+        </a>
       </div>
 
-      <!-- CONTROLES -->
-      <button class="carousel-control-prev" type="button"
-              data-bs-target="#restaurantesCarousel"
-              data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-
-      <button class="carousel-control-next" type="button"
-              data-bs-target="#restaurantesCarousel"
-              data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-white py-4 text-center bg-dark">
-  <div class="mb-3">
-    <a href="https://facebook.com" target="_blank" class="text-white mx-2">
-      <i class="bi bi-facebook fs-4"></i>
-    </a>
-    <a href="https://instagram.com" target="_blank" class="text-white mx-2">
-      <i class="bi bi-instagram fs-4"></i>
-    </a>
-    <a href="https://wa.me/50600000000" target="_blank" class="text-white mx-2">
-      <i class="bi bi-whatsapp fs-4"></i>
-    </a>
-    <a href="https://tiktok.com" target="_blank" class="text-white mx-2">
-      <i class="bi bi-tiktok fs-4"></i>
-    </a>
-  </div>
-  <p class="mb-0">© 2025 Bosque Nuboso La Paz</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+      <p class="mb-0">© 2025 Bosque Nuboso La Paz</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../restaurante.js"></script>
+  </body>
 </html>
