@@ -36,3 +36,22 @@ images.forEach((img, index) => {
   div.style.backgroundImage = `url("${img}")`;
   carousel.appendChild(div);
 });
+
+function ajustarHero() {
+  const hero = document.querySelector(".hero-elegant");
+  const carousel = document.querySelector("#heroCarousel");
+  const vh = window.innerHeight; // altura visible real
+
+  hero.style.height = `${vh}px`;
+  if (carousel) carousel.style.height = `${vh}px`;
+
+  const items = document.querySelectorAll("#heroCarousel .carousel-item");
+  items.forEach((item) => (item.style.height = `${vh}px`));
+}
+
+// Ajusta al cargar la página
+ajustarHero();
+
+// Ajusta al redimensionar o girar el móvil
+window.addEventListener("resize", ajustarHero);
+window.addEventListener("orientationchange", ajustarHero);
