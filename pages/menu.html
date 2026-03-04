@@ -1,132 +1,300 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bosque Nuboso | Menú</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bosque Nuboso | Menú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../estilos/menu.css">
- 
-</head>
+    <link rel="stylesheet" href="../estilos/menu.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="tours.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="restaurantes.html"
+                >Restaurantes</a
+              >
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hospedajes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
-          <li class="nav-item">
-            <a class="nav-link active fw-bold" href="restaurantes.html">Restaurantes</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Miradores</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Souvenirs</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Hospedajes</a></li>
-        </ul>
+    <!-- HEADER -->
+    <div class="menu-header position-relative">
+      <a href="restaurantes.html" class="btn-back">← Volver</a>
+
+      <h1 id="rest-name"></h1>
+      <p class="menu-subtitle">MENÚ GASTRONÓMICO</p>
+
+      <div>
+        <button
+          id="btn-comidas"
+          onclick="showCategory('comidas')"
+          class="tab-btn active"
+        >
+          Comidas
+        </button>
+        <button
+          id="btn-bebidas"
+          onclick="showCategory('bebidas')"
+          class="tab-btn"
+        >
+          Bebidas
+        </button>
       </div>
     </div>
-  </nav>
 
-  <!-- HEADER -->
-  <div class="menu-header position-relative">
-    <a href="restaurantes.html" class="btn-back">← Volver</a>
+    <div class="container mb-5">
+      <div
+        id="menuCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" id="carousel-content"></div>
 
-    <h1 id="rest-name"></h1>
-    <p class="menu-subtitle">MENÚ GASTRONÓMICO</p>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#menuCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
 
-    <div>
-      <button id="btn-comidas" onclick="showCategory('comidas')" class="tab-btn active">
-        Comidas
-      </button>
-      <button id="btn-bebidas" onclick="showCategory('bebidas')" class="tab-btn">
-        Bebidas
-      </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#menuCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
     </div>
-  </div>
-  
-  <div class="container mb-5">
-    <div id="menuCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner" id="carousel-content"></div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-      <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </div>
+    <script>
+      const restaurantes = {
+        vila: {
+          nombre: "Vila Paraíso",
+          comidas: [
+            {
+              nombre: "Casado típico",
+              ingredientes: "Arroz, frijoles, carne, ensalada, plátano",
+              precio: "₡4.500",
+              img: "../imagenes/comidas/pinto.png",
+            },
+            {
+              nombre: "Arroz con pollo",
+              ingredientes: "Arroz, pollo, vegetales",
+              precio: "₡3.800",
+              img: "../imagenes/comidas/pinto.png",
+            },
+          ],
+          bebidas: [
+            {
+              nombre: "Café chorreado",
+              ingredientes: "Café artesanal",
+              precio: "₡1.200",
+              img: "../imagenes/image.png",
+            },
+          ],
+        },
+        //centro turistico rio rio la paz
+        rio: {
+          nombre: "Centro Turístico Río La Paz",
+          comidas: [
+            {
+              nombre: "Trucha a la parrilla",
+              ingredientes: "Trucha fresca, limón, hierbas",
+              precio: "₡5.000",
+              img: "",
+            },
+            {
+              nombre: "Ceviche de trucha",
+              ingredientes: "Trucha, limón, cebolla, cilantro",
+              precio: "₡4.500",
+              img: "../imagenes/comidas/trucha.png",
+            },
+          ],
+          bebidas: [
+            {
+              nombre: "Agua de pipa",
+              ingredientes: "Agua de coco natural",
+              precio: "₡1.000",
+              img: "../imagenes/image.png",
+            },
+          ],
+        },
+        //cafeteria flory
+        flory:{
+          nombre: "Cafetería Flory",
+          comidas: [
+            {
+              nombre: "Tostadas con mermelada",
+              ingredientes: "Pan tostado, mermelada casera",
+              precio: "₡1.500",
+              img: "../imagenes/comidas/tostadas.png",
+            },
+            {
+              nombre: "Empanadas de queso",
+              ingredientes: "Masa frita, queso fundido",
+              precio: "₡2.000",
+              img: "../imagenes/comidas/empanadas.png",
+            },
+          ],
+          bebidas: [
+            {
+              nombre: "Chocolate caliente",
+              ingredientes: "Chocolate artesanal, leche",
+              precio: "₡1.800",
+              img: "../imagenes/image.png",
+            },
+          ],  
+        },
+        //Delicias de anita 
+        anita:{
+          nombre: "Delicias de Anita",
+          comidas: [
+            {
+              nombre: "Gallo pinto",
+              ingredientes: "Arroz, frijoles, cebolla, pimiento",
+              precio: "₡3.000",
+              img: "../imagenes/comidas/pinto.png",
+            },
+            {
+              nombre: "Sopa de verduras",
+              ingredientes: "Caldo, vegetales frescos",
+              precio: "₡2.500",
+              img: "../imagenes/comidas/sopa.png",
+            },
+          ],
+          bebidas: [
+            {
+              nombre: "Refresco natural",
+              ingredientes: "Frutas frescas, agua, azúcar",
+              precio: "₡1.200",
+              img: "../imagenes/image.png",
+            },
+          ],
+        },
+        carrucha:{
+          nombre: "Restaurante La Carrucha",
+          comidas: [
+            {
+              nombre: "Pescado frito",
+              ingredientes: "Pescado fresco, especias, limón",
+              precio: "₡5.500",
+              img: "../imagenes/comidas/pescado.png",
+            },
+            {
+              nombre: "Ensalada tropical",
+              ingredientes: "Lechuga, frutas frescas, aderezo",
+              precio: "₡3.500",
+              img: "../imagenes/comidas/ensalada.png",
+            },
+          ],
+          bebidas: [
+            {
+              nombre: "Jugo de maracuyá",
+              ingredientes: "Maracuyá fresco, agua, azúcar",
+              precio: "₡1.500",
+              img: "../imagenes/image.png",
+            },
+          ],
+        },
+        pizza:{
+          nombre: "Pizza Loca",
+          comidas: [
+            {
+              nombre: "Pizza hawaiana",
+              ingredientes: "Masa, salsa de tomate, queso, jamón, piña",
+              precio: "₡6.000",
+              img: "../imagenes/comidas/pizza.png",
+            },
+            {
+              nombre: "Pizza vegetariana",
+              ingredientes: "Masa, salsa de tomate, queso, vegetales mixtos",
+              precio: "₡5.500",
+              img: "../imagenes/comidas/pizza.png",
+            },
+          ],
+          bebidas: [
+            {
+              nombre: "Limonada casera",
+              ingredientes: "Limones frescos, agua, azúcar",
+              precio: "₡1.200",
+              img: "../imagenes/image.png",
+            },
+          ],
+        },  
+      };
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      const params = new URLSearchParams(window.location.search);
+      const restID = params.get("rest");
+      const rest = restaurantes[restID];
 
-  <script>
-    const restaurantes = {
-      vila: {
-        nombre: "Vila Paraíso",
-        comidas: [
-          {
-            nombre: "Casado típico",
-            ingredientes: "Arroz, frijoles, carne, ensalada, plátano",
-            precio: "₡4.500",
-            img: "../imagenes/comidas/pinto.png"
-          },
-          {
-            nombre: "Arroz con pollo",
-            ingredientes: "Arroz, pollo, vegetales",
-            precio: "₡3.800",
-            img: "../imagenes/comidas/pinto.png"
-          }
-        ],
-        bebidas: [
-          {
-            nombre: "Café chorreado",
-            ingredientes: "Café artesanal",
-            precio: "₡1.200",
-            img: "../imagenes/image.png"
-          }
-        ]
+      if (!rest) {
+        document.body.innerHTML =
+          "<h2 class='text-center mt-5'>Restaurante no encontrado</h2>";
+        throw new Error("Restaurante inválido");
       }
-    };
 
-    const params = new URLSearchParams(window.location.search);
-    const restID = params.get("rest");
-    const rest = restaurantes[restID];
+      document.getElementById("rest-name").innerText = rest.nombre;
 
-    if (!rest) {
-      document.body.innerHTML = "<h2 class='text-center mt-5'>Restaurante no encontrado</h2>";
-      throw new Error("Restaurante inválido");
-    }
+      function showCategory(cat) {
+        const carousel = document.getElementById("carousel-content");
+        carousel.innerHTML = "";
 
-    document.getElementById("rest-name").innerText = rest.nombre;
+        document.getElementById("btn-comidas").classList.remove("active");
+        document.getElementById("btn-bebidas").classList.remove("active");
+        document.getElementById("btn-" + cat).classList.add("active");
 
-    function showCategory(cat) {
-      const carousel = document.getElementById("carousel-content");
-      carousel.innerHTML = "";
+        rest[cat].forEach((item, index) => {
+          const slide = document.createElement("div");
+          slide.className = "carousel-item " + (index === 0 ? "active" : "");
 
-      document.getElementById("btn-comidas").classList.remove("active");
-      document.getElementById("btn-bebidas").classList.remove("active");
-      document.getElementById("btn-" + cat).classList.add("active");
-
-      rest[cat].forEach((item, index) => {
-        const slide = document.createElement("div");
-        slide.className = "carousel-item " + (index === 0 ? "active" : "");
-
-        slide.innerHTML = `
+          slide.innerHTML = `
           <img src="${item.img}" class="d-block w-100" alt="${item.nombre}">
           <div class="carousel-caption">
             <h3>${item.nombre}</h3>
@@ -135,12 +303,34 @@
           </div>
         `;
 
-        carousel.appendChild(slide);
-      });
-    }
+          carousel.appendChild(slide);
+        });
+      }
 
-    showCategory("comidas");
-  </script>
+      showCategory("comidas");
+    </script>
+    <!-- FOOTER -->
+    <footer class="text-white py-4 text-center bg-dark">
+      <div class="mb-3">
+        <a href="https://facebook.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-facebook fs-4"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-instagram fs-4"></i>
+        </a>
+        <a
+          href="https://wa.me/50600000000"
+          target="_blank"
+          class="text-white mx-2"
+        >
+          <i class="bi bi-whatsapp fs-4"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-tiktok fs-4"></i>
+        </a>
+      </div>
 
-</body>
+      <p class="mb-0">© 2025 Bosque Nuboso La Paz</p>
+    </footer>
+  </body>
 </html>
