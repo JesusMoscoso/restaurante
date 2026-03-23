@@ -142,3 +142,40 @@ footer {
     font-size: 1.1rem;
   }
 }
+.mision-vision {
+  background: #f5f3ef;
+}
+
+.mv-card {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  transition: 0.3s;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.mv-icon {
+  font-size: 2.2rem;
+
+  color: #198754;
+
+  margin-bottom: 15px;
+}
+
+.mv-card p {
+  color: #555;
+
+  line-height: 1.7;
+}

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva | Experiencia Mística</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../estilos/infoHospedaje.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">Bosque Nuboso</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="tours.html">Actividades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="restaurantes.html">Restaurantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="miradores.html">Miradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="souvenirs.html">Souvenirs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="hospedajes.html"
+                >Hospedajes</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="app"><a href="hospedajes.html" class="btn-back">← Volver</a></div>
+
+    <!-- FOOTER -->
+    <footer class="text-white py-4 text-center bg-dark">
+      <div class="mb-3">
+        <a href="https://facebook.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-facebook fs-4"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-instagram fs-4"></i>
+        </a>
+        <a
+          href="https://wa.me/50600000000"
+          target="_blank"
+          class="text-white mx-2"
+        >
+          <i class="bi bi-whatsapp fs-4"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="text-white mx-2">
+          <i class="bi bi-tiktok fs-4"></i>
+        </a>
+      </div>
+
+      <p class="mb-0">© 2025 Bosque Nuboso La Paz</p>
+    </footer>
+
+    <script>
+      const database = {
+        zunZun: {
+          nombre: "Cabañas ZunZun",
+          slogan: "Cerca de las nubes",
+          descripcion:
+            "Un refugio místico diseñado para fundirse con el dosel del bosque nuboso. Aquí, el lujo no es el mármol, sino el silencio interrumpido únicamente por el canto de los quetzales.",
+          precioDesde: "$120",
+          whatsapp: "50688888888",
+          ubicacion: "San Ramon | San Juan ",
+          direccion: `
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d694.2618168107572!2d-84.53507066658725!3d10.15316393589322!3m2!1i1024!2i768!4f13.1!2m1!1scaba%C3%B1as%20zunzun%20san%20ram%C3%B3n%20direccion!5e0!3m2!1ses-419!2scr!4v1774281128485!5m2!1ses-419!2scr"
+width="100%"
+height="170"
+style="border:0; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+loading="lazy">
+</iframe>
+`,
+
+          entrada: "2:00 PM",
+          salida: "11:00 AM",
+          fotos: [
+            "https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=1200",
+            "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1200",
+          ],
+          amenidades: [
+            "Jacuzzi Caliente",
+            "Chimenea de Piedra",
+            "Desayuno Artesanal",
+            "Wifi Fibra",
+            "Senderos Privados",
+          ],
+          habitaciones: [
+            {
+              nombre: "Suite Nube",
+              capacidad: "2 Personas",
+              precio: "$120",
+              detalles: "Cama King, Terraza, Jacuzzi",
+            },
+            {
+              nombre: "Master Forest",
+              capacidad: "4 Personas",
+              precio: "$165",
+              detalles: "2 Plantas, Cocina equipada, Chimenea",
+            },
+          ],
+          actividades: [
+            "Tour de Avistamiento",
+            "Caminata al Chirripó",
+            "Visita a Cataratas",
+            "Cata de Café Local",
+          ],
+          politicas: [
+            "No fumar en interiores",
+            "Mascotas permitidas (Pet Friendly)",
+            "Cancelación 48h antes",
+          ],
+        },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("hospedaje") || "zunZun";
+      const h = database[id];
+
+      if (h) {
+        document.getElementById("app").innerHTML = `
+    
+                      <div class="hero-wrap" style="background-image: url('${h.fotos[0]}')">
+                          <div class="hero-overlay">
+                              <div class="container">
+                                <a href="restaurantes.html" class="btn-back">← Volver</a>
+                                  <h1 class="display-2 text-white mb-0">${h.nombre}</h1>
+                                        
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="container mt-5">
+                          <div class="row g-5">
+                              <div class="col-lg-8">
+                                  <div class="info-section">
+                                      <span class="label-mystic">La Estancia</span>
+                                      <h2 class="mb-4">${h.slogan}</h2>
+                                      <p class="text-muted lead">${h.descripcion}</p>
+
+                                      <div class="mt-4">
+                                          ${h.amenidades.map((a) => `<span class="amenity-pill"><i class="bi bi-check2 me-1"></i>${a}</span>`).join("")}
+                                      </div>
+                                  </div>
+
+                                  <div class="info-section">
+                                      <span class="label-mystic">Galería</span>
+                                      <div id="mainCarousel" class="carousel slide carousel-fade carousel-modern" data-bs-ride="carousel">
+                                          <div class="carousel-inner">
+                                              ${h.fotos
+                                                .map(
+                                                  (f, i) => `
+                                                  <div class="carousel-item ${i === 0 ? "active" : ""}">
+                                                      <img src="${f}" class="d-block w-100" alt="foto">
+                                                  </div>
+                                              `,
+                                                )
+                                                .join("")}
+                                          </div>
+                                          <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                                              <span class="carousel-control-prev-icon"></span>
+                                          </button>
+                                          <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                                              <span class="carousel-control-next-icon"></span>
+                                          </button>
+                                      </div>
+                                  </div>
+
+                                  <div class="info-section">
+                                      <span class="label-mystic">Opciones de Alojamiento</span>
+                                      ${h.habitaciones
+                                        .map(
+                                          (room) => `
+                                          <div class="room-card d-flex justify-content-between align-items-center">
+                                              <div>
+                                                  <h5 class="mb-1">${room.nombre}</h5>
+                                                  <small class="text-muted">${room.detalles} • <b>${room.capacidad}</b></small>
+                                              </div>
+                                              <div class="text-end">
+                                                  <span class="fw-bold d-block">${room.precio}</span>
+                                                  <small class="x-small">por noche</small>
+                                              </div>
+                                          </div>
+                                      `,
+                                        )
+                                        .join("")}
+                                  </div>
+
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <div class="info-section h-100">
+                                              <span class="label-mystic">Actividades</span>
+                                              <ul class="list-unstyled mb-0">
+                                                  ${h.actividades.map((act) => `<li class="mb-2 small"><i class="bi bi-compass me-2 text-success"></i>${act}</li>`).join("")}
+                                              </ul>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="info-section h-100">
+                                              <span class="label-mystic">Políticas</span>
+                                              <ul class="list-unstyled mb-0">
+                                                  ${h.politicas.map((pol) => `<li class="mb-2 small"><i class="bi bi-info-circle me-2 text-warning"></i>${pol}</li>`).join("")}
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="col-lg-4">
+                                  <div class="sticky-sidebar">
+                                      <div class="info-section bg-dark text-white border-0" style="background: var(--forest) !important;">
+                                          <span class="label-mystic opacity-50">Tarifa Sugerida</span>
+                                          <div class="d-flex align-items-baseline gap-2">
+                                              <h2 class="display-5 mb-0" style="color: var(--gold)">${h.precioDesde}</h2>
+                                              <span class="small opacity-50">/ noche</span>
+                                          </div>
+                                          <hr class="my-4 opacity-25">
+
+                                          <div class="mb-4">
+                                              <div class="d-flex justify-content-between mb-2 small">
+                                                  <span class="opacity-50">Hora de entrada:</span>
+                                                  <span>${h.entrada}</span>
+                                              </div>
+                                              <div class="d-flex justify-content-between small">
+                                                  <span class="opacity-50">Hora de salida:</span>
+                                                  <span> ${h.salida}</span>
+                                              </div>
+                                          </div>
+
+                                          <a href="https://wa.me/${h.whatsapp}?text=Hola! Me gustaría consultar disponibilidad para ${h.nombre}"
+                                             target="_blank" class="btn-whatsapp-modern">
+                                              <i class="bi bi-whatsapp"></i> Reservar vía WhatsApp
+                                          </a>
+                                      </div>
+
+                                      <div class="info-section">
+                                          <span class="label-mystic">Ubicación</span>
+                                          <p class="small mb-3"><i class="bi bi-geo-alt-fill me-2"></i>${h.ubicacion}</p>
+                                          ${h.direccion}
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
