@@ -15,15 +15,55 @@ body {
   background: var(--verde);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  min-height: 82px;
+  height: 82px;
+  overflow: visible;
 }
 .navbar a {
   color: #fff !important;
   font-weight: 500;
   letter-spacing: 0.6px;
 }
+.navbar .nav-link {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--dorado) !important;
+  background-color: rgba(201, 164, 92, 0.14);
+}
+.navbar .nav-link.active {
+  color: #fff !important;
+}
+.navbar .nav-item.text-center .nav-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  white-space: normal;
+}
+.navbar .nav-link .bi {
+  font-size: 1.15rem;
+}
 .navbar-brand {
   font-size: 1.35rem;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  margin-left: -12px;
+  height: 82px;
+}
+.navbar-logo {
+  max-height: 96px;
+  width: auto;
+  display: block;
+  margin-top: -7px;
+  margin-bottom: -7px;
+  margin-left: -8px;
 }
 /* HEADER GENERAL */
 .menu-header {
@@ -290,4 +330,3 @@ body {
   font-weight: 500;
   color: #2d6a4f;
 }
-

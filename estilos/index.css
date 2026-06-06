@@ -15,15 +15,55 @@ body {
   background: var(--verde);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  min-height: 82px;
+  height: 82px;
+  overflow: visible;
 }
 .navbar a {
   color: #fff !important;
   font-weight: 500;
   letter-spacing: 0.6px;
 }
+.navbar .nav-link {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--dorado) !important;
+  background-color: rgba(201, 164, 92, 0.14);
+}
+.navbar .nav-link.active {
+  color: #fff !important;
+}
+.navbar .nav-item.text-center .nav-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  white-space: normal;
+}
+.navbar .nav-link .bi {
+  font-size: 1.15rem;
+}
 .navbar-brand {
   font-size: 1.35rem;
   letter-spacing: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 82px;
+  display: flex;
+  align-items: center;
+}
+.navbar-logo {
+  max-height: 96px;
+  width: auto;
+  display: block;
+  margin-top: -7px;
+  margin-bottom: -7px;
 }
 
 .hero-elegant {
@@ -143,39 +183,169 @@ footer {
   }
 }
 .mision-vision {
-  background: #f5f3ef;
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #faf8f4, #f3efe7);
+  overflow: hidden;
 }
 
+/* Decoración */
+
+.mision-vision::before,
+.mision-vision::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.mision-vision::before {
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, var(--verde), transparent 70%);
+}
+
+.mision-vision::after {
+  top: -120px;
+  right: -120px;
+  background: radial-gradient(circle, var(--dorado), transparent 70%);
+}
+
+/* Icono superior */
+
+.section-icon {
+  font-size: 2rem;
+  color: var(--verde);
+  margin-bottom: 12px;
+}
+
+/* Título */
+
+.mision-vision h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #17351f;
+}
+
+.mision-vision .text-muted {
+  font-size: 1.15rem;
+  color: #666 !important;
+}
+
+.mision-vision .text-center::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 20px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--verde), var(--dorado));
+}
+
+/* Tarjetas */
+
 .mv-card {
-  background: white;
-
-  padding: 40px;
-
-  border-radius: 20px;
-
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 55px 40px;
   text-align: center;
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.35s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
-  transition: 0.3s;
+.mv-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(to top, rgba(31, 138, 91, 0.08), transparent);
 }
 
 .mv-card:hover {
-  transform: translateY(-5px);
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
 }
+
+/* Iconos */
 
 .mv-icon {
-  font-size: 2.2rem;
-
-  color: #198754;
-
-  margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: rgba(31, 138, 91, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.mv-icon i {
+  font-size: 3rem;
+  color: var(--verde);
+}
+
+/* Títulos */
+
+.mv-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #17351f;
+  margin-bottom: 20px;
+}
+
+/* Texto */
 
 .mv-card p {
   color: #555;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
 
-  line-height: 1.7;
+/* Diferenciar tarjetas */
+
+.col-md-6:first-child .mv-card {
+  border-bottom: 6px solid var(--verde);
+}
+
+.col-md-6:last-child .mv-card {
+  border-bottom: 6px solid var(--dorado);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .mision-vision {
+    padding: 70px 0;
+  }
+
+  .mv-card {
+    padding: 35px 25px;
+  }
+
+  .mv-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .mv-icon i {
+    font-size: 2.2rem;
+  }
+
+  .mv-card h4 {
+    font-size: 1.7rem;
+  }
+
+  .mv-card p {
+    font-size: 1rem;
+  }
 }
